@@ -1,0 +1,464 @@
+// header
+.developer-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 1px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 1px 12px rgba(0, 0, 0, 0.08);
+            padding: 10px 0;
+  }
+  
+  .developer-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  @media only screen and (max-width: 575px) {
+    .developer-wrapper {
+      display: block;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+  }
+  .developer-wrapper .developer-logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .developer-wrapper .developer-logo-area .sidebar-mobile-btn {
+    margin-right: 5px;
+    display: none;
+  }
+  @media only screen and (max-width: 767px) {
+    .developer-wrapper .developer-logo-area .sidebar-mobile-btn {
+      display: block;
+    }
+  }
+  .developer-wrapper .developer-logo-area .sidebar-mobile-btn button, .developer-wrapper .developer-logo-area .sidebar-mobile-btn input[type=button], .developer-wrapper .developer-logo-area .sidebar-mobile-btn input[type=reset], .developer-wrapper .developer-logo-area .sidebar-mobile-btn input[type=submit] {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: #464346;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+  .developer-wrapper .developer-logo-area .sidebar-mobile-btn button:hover, .developer-wrapper .developer-logo-area .sidebar-mobile-btn input[type=button]:hover, .developer-wrapper .developer-logo-area .sidebar-mobile-btn input[type=reset]:hover, .developer-wrapper .developer-logo-area .sidebar-mobile-btn input[type=submit]:hover {
+    color: $base--color;
+  }
+  .developer-wrapper .developer-logo-area .site-logo {
+    max-width: 140px;
+  }
+  @media only screen and (max-width: 767px) {
+    .developer-wrapper .developer-logo-area .site-logo {
+      max-width: 120px;
+    }
+  }
+  .developer-wrapper .developer-logo-area .logo-text {
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(36, 36, 36);
+    padding: 1px 10px;
+    border: 2px solid $base--color;
+    border-radius: 30px;
+  }
+  .developer-wrapper .developer-header-content {
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: 575px) {
+      padding-top: 10px;
+    }
+  }
+  .developer-wrapper .developer-header-content .developer-header-list {
+    padding-left: 20px;
+    margin: -15px;
+  }
+  .developer-wrapper .developer-header-content .developer-header-list li {
+    margin: 15px;
+  }
+  .developer-wrapper .developer-header-content .developer-header-list li a {
+    font-size: 14px;
+    font-weight: 700;
+    color: $color--text;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .developer-wrapper .developer-header-content .developer-header-list li a:hover {
+    color: $base--color;
+  }
+  .developer-wrapper .developer-header-content .developer-header-action {
+    margin-left: 30px;
+    @media only screen and (max-width: 375px) {
+      margin-left: 15px;
+    }
+  }
+  .developer-wrapper .developer-header-content .developer-header-action .btn--base {
+    padding: 8px 15px;
+  }
+  
+
+// page
+.developer-page-container {
+    width: 100%;
+    height: 100%;
+  }
+  .developer-page-container .developer-bar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 1px 12px rgba(0, 0, 0, 0.08);
+    z-index: 8;
+    transition: all 0.3s;
+  }
+  @media only screen and (max-width: 767px) {
+    .developer-page-container .developer-bar {
+      top: 0;
+      left: -400px;
+    }
+    .developer-page-container .developer-bar.active {
+      left: 0;
+    }
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper {
+    margin-top: 100px;
+    height: 100vh;
+    padding-bottom: 60px;
+    overflow-y: auto;
+    padding-top: 20px;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .list-divider {
+    padding: 0 10px 15px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000000;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li {
+    position: relative;
+    font-size: 14px;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li.active a {
+    background-color: rgba(190, 190, 190, 0.1);
+    color: $base--color;
+    font-weight: 600;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li.active ul li a {
+    background-color: transparent;
+    color: #464346;
+    font-weight: 500;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li.active ul li a:hover {
+    color: $base--color;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li.active ul li.active a {
+    color: $base--color;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li.has-sub.active a::before {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li.has-sub a::before {
+    position: absolute;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    color: $base--color;
+    font-size: 14px;
+    right: 20px;
+    top: 6px;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li a {
+    display: block;
+     align-items: center;
+    padding: 6px 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    border-radius: 0 30px 30px 0;
+    border-radius: 10px;
+    z-index: 2;
+    transition: all 0.3s;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    color: #464346;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li a:hover {
+    background-color: rgba(198, 198, 198, 0.1);
+    color: $base--color;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li a i {
+    margin-right: 3px;
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li ul {
+    position: relative;
+    display: none;
+    z-index: 1;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li ul.open {
+    display: block;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li ul li {
+    padding: 8px;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li ul li:last-child {
+    border: none;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li ul li a {
+    padding: 0 0;
+    padding-left: 30px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .developer-page-container .developer-bar .developer-bar-wrapper .developer-bar-main-menu li ul li a::before {
+    display: none;
+  }
+  .developer-page-container .developer-body-wrapper {
+    margin-left: 250px;
+    padding: 60px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  @media only screen and (max-width: 767px) {
+    .developer-page-container .developer-body-wrapper {
+      margin-left: 0;
+    }
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .heading-title {
+    font-size: 30px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .bg--orange {
+    background: #FF6C37;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .important-note {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #dc3545;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .important-note.blue {
+    border-color: $base--color;
+    padding: 10px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .important-note.blue .important-title i {
+    font-size: 16px;
+    top: 1px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .important-note .important-title i {
+    font-size: 24px;
+    position: relative;
+    top: 4px;
+    margin-right: 10px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .important-note ul {
+    padding-top: 15px;
+    padding-left: 70px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .important-note ul li {
+    list-style: disc;
+    font-size: 12px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper ul {
+    padding-left: 40px;
+    margin: -8px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper ul li {
+    list-style: disc;
+    font-size: 14px;
+    margin: 8px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper ol {
+    margin: -10px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper ol li {
+    margin: 10px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab {
+    margin: -10px;
+    padding-left: unset;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item {
+    list-style: none;
+    margin: 10px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item button, .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item input[type=button], .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item input[type=reset], .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item input[type=submit] {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item button.active, .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item input.active[type=button], .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item input.active[type=reset], .developer-page-container .developer-body-wrapper .developer-main-wrapper .tab-area .developer-tab .nav-item input.active[type=submit] {
+    background: transparent !important;
+    color: $base--color !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid $border--base;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .highlight {
+    color: rgb(10, 10, 10);
+    background-color: rgb(239, 242, 243);
+    border-radius: 2px;
+    border: 1px solid rgb(40, 40, 40);
+    padding: 0.1em 0.25em 0.2em;
+    font-weight: 400;
+    word-break: break-word;
+    font-size: 0.85em;
+    font-family: monospace;
+  }
+  .developer-page-container .developer-body-wrapper .developer-main-wrapper .badge {
+        clip-path: none;
+  }
+
+/*-------------------------------------------------
+  [ ## page change navigation block ]
+*/
+.page-change-area {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+  @media only screen and (max-width: 767px) {
+    .page-change-area {
+      padding: 0;
+    }
+  }
+  .page-change-area .date-wrapper {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0e0e0e;
+    margin-bottom: 15px;
+  }
+  .page-change-area .date-wrapper i {
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+    margin-right: 2px;
+    color: $base--color;
+  }
+  .page-change-area .navigation-wrapper {
+    border-top: 1px solid $border--base;
+    padding-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-change-area .navigation-wrapper a {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+    transition: all 0.3s;
+  }
+  .page-change-area .navigation-wrapper a i {
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    transition: all 0.3s;
+  }
+  .page-change-area .navigation-wrapper a.right {
+    margin-left: auto;
+  }
+  .page-change-area .navigation-wrapper a.left {
+    margin-right: auto;
+  }
+  .page-change-area .navigation-wrapper a:hover {
+    color: $base--color;
+  }
+  .page-change-area .navigation-wrapper a:hover.right i {
+            transform: translateX(5px);
+  }
+  .page-change-area .navigation-wrapper a:hover.left i {
+            transform: translateX(-5px);
+  }
+  .page-change-area .feedback-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .page-change-area .feedback-wrapper .feedback {
+    display: flex;
+    padding: 10px 15px;
+    border: 1px solid #ded7e9;
+    border-radius: 10px;
+  }
+  .page-change-area .feedback-wrapper .feedback .content {
+    margin-right: 15px;
+  }
+  .page-change-area .feedback-wrapper .feedback ul {
+    display: flex;
+    margin: -5px;
+  }
+  .page-change-area .feedback-wrapper .feedback ul.active li {
+    color: $base--color;
+  }
+  .page-change-area .feedback-wrapper .feedback ul li {
+    margin: 5px;
+    color: #000000;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .page-change-area .feedback-wrapper .feedback ul li:hover {
+    color: $base--color;
+  }
+  .page-change-area .feedback-wrapper .feedback ul li i {
+    position: relative;
+    top: 1px;
+    font-size: 17px;
+    margin-right: 2px;
+  }
+  
+  .prettyprint {
+    border-radius: 20px;
+    margin-top: 30px;
+  }
+  
+  .prettyprint span {
+    display: unset;
+  }
+  
+  @media only screen and (max-width: 575px) {
+    .reg-lable label {
+      font-size: 12px;
+    }
+  }
+  .mb-35-none {
+    margin-bottom: -35px;
+  }
+  
+  .code-heading-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .code-show-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  pre.prettyprint {
+    background: $white;
+    padding: 10px;
+    border: 1px solid #ded7e9;
+  }
+  

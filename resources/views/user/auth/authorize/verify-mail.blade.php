@@ -1,0 +1,62 @@
+@extends('frontend.layouts.master')
+@section('content')
+    <section class="account-section ptb-80"> 
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="account-area">
+                        <div class="row align-items-center justify-content-center"> 
+                            <div class="col-lg-6 mx-auto">
+                                <h3 class="title">{{ __("Account Authorization") }}</h3>
+                                <p>{{ __("Need to verify your account. Please check your mail inbox to get the authorization code") }}</p>
+                                <form action="{{ setRoute('user.authorize.mail.verify',$token) }}" class="account-form" method="POST">
+                                    @csrf
+                                    <div class="row ml-b-20">
+                                        <div class="col-lg-12 form-group">
+                                            @include('admin.components.form.input',[
+                                                'name'          => "code",
+                                                'placeholder'   => "Enter Verification Code",
+                                                'required'      => true,
+                                                'value'         => old("code"),
+                                            ])
+                                        </div>
+                                        <div class="col-lg-12 form-group">
+                                            <div class="col-lg-12 form-group">
+                                                <div class="forgot-item">{{ __("You can resend the code after") }} <span id="time"></span></div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-lg-12 form-group text-center">
+                                            <button type="submit" class="btn--base w-100">{{ __("Authorize") }}</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+@push('script')
+<script>
+    function resetTime (second = 60) {
+        var coundDownSec = second;
+        var countDownDate = new Date();
+        countDownDate.setMinutes(countDownDate.getMinutes() + 120);
+        var x = setInterval(function () {  // Get today's date and time
+            var now = new Date().getTime();  // Find the distance between now and the count down date
+            var distance = countDownDate - now;  // Time calculations for days, hours, minutes and seconds  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * coundDownSec)) / (1000 * coundDownSec));
+            var seconds = Math.floor((distance % (1000 * coundDownSec)) / 1000);  // Output the result in an element with id="time"
+            document.getElementById("time").innerHTML =seconds + "s ";  // If the count down is over, write some text
+            if (distance < 0 || second < 2 ) {
+                clearInterval(x);
+                document.querySelector(".forgot-item").innerHTML = "<label>Don't get code? <a href='{{ setRoute('user.authorize.resend.code',$token) }}' class='text--base'>Resend</a></label>";
+            }
+            second--
+        }, 1000);
+    }
+    resetTime();
+</script>
+@endpush

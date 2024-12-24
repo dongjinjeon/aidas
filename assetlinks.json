@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "net.appdevs.walletium",
+    "sha256_cert_fingerprints":
+    ["A6:AB:09:77:71:1C:F0:E7:24:E6:C1:A9:37:5B:DD:43:FD:CA:F6:92:F4:94:58:21:F3:29:72:30:8B:46:3E:AF"]
+  }
+}]

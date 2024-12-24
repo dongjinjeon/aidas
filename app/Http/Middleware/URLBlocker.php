@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use App\Providers\Admin\BasicSettingsProvider;
+use Closure;
+use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+class URLBlocker
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     */
+    public function handle(Request $request, Closure $next)
+    {
+        $route_block_list = [];
+        try{
+            $basic_settings = BasicSettingsProvider::get();
+        }catch(Exception $e) {
+            // handle error
+        }
+
+        if(in_array(Route::currentRouteName(), $route_block_list)) abort(404);
+
+        return $next($request);
+    }
+}
